@@ -1,0 +1,25 @@
+{
+  "secretWeaponApp": {
+    "expertUser": {
+      "home": {
+        "title": "Expert Users",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Expert User",
+        "createOrEditLabel": "Create or edit a Expert User",
+        "notFound": "No Expert Users found"
+      },
+      "created": "A new Expert User is created with identifier {{ param }}",
+      "updated": "A Expert User is updated with identifier {{ param }}",
+      "deleted": "A Expert User is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Expert User {{ id }}?"
+      },
+      "detail": {
+        "title": "Expert User"
+      },
+      "id": "ID",
+      "expertise": "Expertise",
+      "userAccount": "User Account"
+    }
+  }
+}
