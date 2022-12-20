@@ -35,6 +35,13 @@
   "name": "Post",
   "pagination": "no",
   "readOnly": false,
-  "relationships": [],
+  "relationships": [
+    {
+      "otherEntityName": "userAccount",
+      "otherEntityRelationshipName": "post",
+      "relationshipName": "login",
+      "relationshipType": "many-to-one"
+    }
+  ],
   "service": "no"
 }

@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { IUserAccount } from 'app/shared/model/user-account.model';
 import { Expertise } from 'app/shared/model/enumerations/expertise.model';
 
 export interface IPost {
@@ -9,6 +10,7 @@ export interface IPost {
   expertise?: Expertise | null;
   imageContentType?: string | null;
   image?: string | null;
+  login?: IUserAccount | null;
 }
 
 export const defaultValue: Readonly<IPost> = {};

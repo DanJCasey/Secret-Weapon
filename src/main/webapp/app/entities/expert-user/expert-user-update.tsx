@@ -53,7 +53,7 @@ export const ExpertUserUpdate = () => {
     const entity = {
       ...expertUserEntity,
       ...values,
-      userAccount: userAccounts.find(it => it.id.toString() === values.userAccount.toString()),
+      login: userAccounts.find(it => it.id.toString() === values.login.toString()),
     };
 
     if (isNew) {
@@ -69,7 +69,7 @@ export const ExpertUserUpdate = () => {
       : {
           expertise: 'PLUMBING',
           ...expertUserEntity,
-          userAccount: expertUserEntity?.userAccount?.id,
+          login: expertUserEntity?.login?.id,
         };
 
   return (
@@ -111,10 +111,10 @@ export const ExpertUserUpdate = () => {
                 ))}
               </ValidatedField>
               <ValidatedField
-                id="expert-user-userAccount"
-                name="userAccount"
-                data-cy="userAccount"
-                label={translate('secretWeaponApp.expertUser.userAccount')}
+                id="expert-user-login"
+                name="login"
+                data-cy="login"
+                label={translate('secretWeaponApp.expertUser.login')}
                 type="select"
               >
                 <option value="" key="0" />

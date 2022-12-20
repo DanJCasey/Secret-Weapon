@@ -35,10 +35,15 @@ public class UserAccount implements Serializable {
     @JoinColumn(unique = true)
     private User user;
 
-    @OneToMany(mappedBy = "userAccount")
+    @OneToMany(mappedBy = "login")
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JsonIgnoreProperties(value = { "userAccount" }, allowSetters = true)
+    @JsonIgnoreProperties(value = { "login" }, allowSetters = true)
     private Set<ExpertUser> expertUsers = new HashSet<>();
+
+    @OneToMany(mappedBy = "login")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @JsonIgnoreProperties(value = { "login" }, allowSetters = true)
+    private Set<Post> posts = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -100,10 +105,10 @@ public class UserAccount implements Serializable {
 
     public void setExpertUsers(Set<ExpertUser> expertUsers) {
         if (this.expertUsers != null) {
-            this.expertUsers.forEach(i -> i.setUserAccount(null));
+            this.expertUsers.forEach(i -> i.setLogin(null));
         }
         if (expertUsers != null) {
-            expertUsers.forEach(i -> i.setUserAccount(this));
+            expertUsers.forEach(i -> i.setLogin(this));
         }
         this.expertUsers = expertUsers;
     }
@@ -115,13 +120,44 @@ public class UserAccount implements Serializable {
 
     public UserAccount addExpertUser(ExpertUser expertUser) {
         this.expertUsers.add(expertUser);
-        expertUser.setUserAccount(this);
+        expertUser.setLogin(this);
         return this;
     }
 
     public UserAccount removeExpertUser(ExpertUser expertUser) {
         this.expertUsers.remove(expertUser);
-        expertUser.setUserAccount(null);
+        expertUser.setLogin(null);
+        return this;
+    }
+
+    public Set<Post> getPosts() {
+        return this.posts;
+    }
+
+    public void setPosts(Set<Post> posts) {
+        if (this.posts != null) {
+            this.posts.forEach(i -> i.setLogin(null));
+        }
+        if (posts != null) {
+            posts.forEach(i -> i.setLogin(this));
+        }
+        this.posts = posts;
+    }
+
+    public UserAccount posts(Set<Post> posts) {
+        this.setPosts(posts);
+        return this;
+    }
+
+    public UserAccount addPost(Post post) {
+        this.posts.add(post);
+        post.setLogin(this);
+        return this;
+    }
+
+    public UserAccount removePost(Post post) {
+        this.posts.remove(post);
+        post.setLogin(null);
         return this;
     }
 

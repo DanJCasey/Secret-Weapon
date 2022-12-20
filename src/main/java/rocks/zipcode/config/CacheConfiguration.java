@@ -52,6 +52,7 @@ public class CacheConfiguration {
             createCache(cm, rocks.zipcode.domain.UserAccount.class.getName() + ".expertUsers");
             createCache(cm, rocks.zipcode.domain.Post.class.getName());
             createCache(cm, rocks.zipcode.domain.ExpertUser.class.getName());
+            createCache(cm, rocks.zipcode.domain.UserAccount.class.getName() + ".posts");
             // jhipster-needle-ehcache-add-entry
         };
     }

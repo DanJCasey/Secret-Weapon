@@ -19,7 +19,7 @@
       },
       "id": "ID",
       "expertise": "Expertise",
-      "userAccount": "User Account"
+      "login": "Login"
     }
   }
 }

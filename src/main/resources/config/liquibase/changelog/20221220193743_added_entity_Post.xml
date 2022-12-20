@@ -32,6 +32,9 @@
             <column name="image_content_type" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
+            <column name="login_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>
         <dropDefaultValue tableName="post" columnName="date" columnDataType="${datetimeType}"/>
