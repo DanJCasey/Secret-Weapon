@@ -1,0 +1,29 @@
+Model
+-Database of user submitted issues, pictures paired with text
+-updated issues with Expert responses overlayed on top
+-categorized into unanswered, in progress, completed, requires call
+-Database of services provided for/trades displayed. IE Start with plumbing, as other trades are added, database updated for level of help available.
+    -users can also see examples of previously submitted issue requests given the trade selection
+-Keeping track of scheduled/previously completed calendar/zoom contacts.
+
+
+
+View
+-User view: Home page with wheel of available trades.
+  -Drop down menu to look through previously submitted/completed issues
+  -Drop down menu to view currently in progress issues
+  -Button to take user to new submission screen
+-Expert View: Home page of recently submitted requests, only displaying category appropriate to Trade
+  -Button to switch to feed of Accepted Tasks that
+  -Accepted tasks shows currently in progress tasks, has option for previously completed tasks.
+  -Accepted tasks has option to create an "appointment" : essentially a calendly/zoom link for the user to accept and join
+ 
+
+
+Controller
+-Submit new: Uploads user issue to database
+-Update feed: Updates expert feeds based on category
+-Scroll wheel select: Opens a user viewable feed of the given trade upon selection, allowing them to see examples of user submitted issues.
+-Accepted task by expert moves user problem away from Categorized Feed
+-Scheduled appt creates zoom link for expert and user to enter zoom room for consultation discussion
+    -Track how long zoom meeting lasts
