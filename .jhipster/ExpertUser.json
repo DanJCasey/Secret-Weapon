@@ -1,0 +1,28 @@
+{
+  "applications": "*",
+  "changelogDate": "20221220193744",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "expert_user",
+  "fields": [
+    {
+      "fieldName": "expertise",
+      "fieldType": "Expertise",
+      "fieldValues": "PLUMBING (Plumbing),ELECTRICIAN (Electrician),CARPENTER (Carpenter),MECHANIC (Mechanic)"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ExpertUser",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "userAccount",
+      "otherEntityRelationshipName": "expertUser",
+      "relationshipName": "userAccount",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}

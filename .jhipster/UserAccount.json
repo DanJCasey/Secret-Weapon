@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "changelogDate": "20221220193742",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "user_account",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "UserAccount",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "userAccount",
+      "ownerSide": true,
+      "relationshipName": "user",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "expertUser",
+      "otherEntityRelationshipName": "userAccount",
+      "relationshipName": "expertUser",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no"
+}
