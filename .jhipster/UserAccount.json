@@ -29,8 +29,14 @@
     },
     {
       "otherEntityName": "expertUser",
-      "otherEntityRelationshipName": "userAccount",
+      "otherEntityRelationshipName": "login",
       "relationshipName": "expertUser",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "post",
+      "otherEntityRelationshipName": "login",
+      "relationshipName": "post",
       "relationshipType": "one-to-many"
     }
   ],

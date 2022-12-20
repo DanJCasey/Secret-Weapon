@@ -75,6 +75,10 @@ export const PostDetail = () => {
               </div>
             ) : null}
           </dd>
+          <dt>
+            <Translate contentKey="secretWeaponApp.post.login">Login</Translate>
+          </dt>
+          <dd>{postEntity.login ? postEntity.login.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/post" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

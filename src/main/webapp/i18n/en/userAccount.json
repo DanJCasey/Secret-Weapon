@@ -21,7 +21,8 @@
       "name": "Name",
       "password": "Password",
       "user": "User",
-      "expertUser": "Expert User"
+      "expertUser": "Expert User",
+      "post": "Post"
     }
   }
 }

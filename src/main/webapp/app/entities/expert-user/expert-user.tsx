@@ -55,7 +55,7 @@ export const ExpertUser = () => {
                   <Translate contentKey="secretWeaponApp.expertUser.expertise">Expertise</Translate>
                 </th>
                 <th>
-                  <Translate contentKey="secretWeaponApp.expertUser.userAccount">User Account</Translate>
+                  <Translate contentKey="secretWeaponApp.expertUser.login">Login</Translate>
                 </th>
                 <th />
               </tr>
@@ -71,13 +71,7 @@ export const ExpertUser = () => {
                   <td>
                     <Translate contentKey={`secretWeaponApp.Expertise.${expertUser.expertise}`} />
                   </td>
-                  <td>
-                    {expertUser.userAccount ? (
-                      <Link to={`/user-account/${expertUser.userAccount.id}`}>{expertUser.userAccount.id}</Link>
-                    ) : (
-                      ''
-                    )}
-                  </td>
+                  <td>{expertUser.login ? <Link to={`/user-account/${expertUser.login.id}`}>{expertUser.login.id}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/expert-user/${expertUser.id}`} color="info" size="sm" data-cy="entityDetailsButton">

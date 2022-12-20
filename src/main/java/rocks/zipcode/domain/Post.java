@@ -1,5 +1,6 @@
 package rocks.zipcode.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
 import javax.persistence.*;
@@ -46,6 +47,10 @@ public class Post implements Serializable {
 
     @Column(name = "image_content_type")
     private String imageContentType;
+
+    @ManyToOne
+    @JsonIgnoreProperties(value = { "user", "expertUsers", "posts" }, allowSetters = true)
+    private UserAccount login;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -138,6 +143,19 @@ public class Post implements Serializable {
 
     public void setImageContentType(String imageContentType) {
         this.imageContentType = imageContentType;
+    }
+
+    public UserAccount getLogin() {
+        return this.login;
+    }
+
+    public void setLogin(UserAccount userAccount) {
+        this.login = userAccount;
+    }
+
+    public Post login(UserAccount userAccount) {
+        this.setLogin(userAccount);
+        return this;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

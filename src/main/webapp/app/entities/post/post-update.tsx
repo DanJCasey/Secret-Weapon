@@ -8,6 +8,8 @@ import { convertDateTimeFromServer, convertDateTimeToServer, displayDefaultDateT
 import { mapIdList } from 'app/shared/util/entity-utils';
 import { useAppDispatch, useAppSelector } from 'app/config/store';
 
+import { IUserAccount } from 'app/shared/model/user-account.model';
+import { getEntities as getUserAccounts } from 'app/entities/user-account/user-account.reducer';
 import { IPost } from 'app/shared/model/post.model';
 import { Expertise } from 'app/shared/model/enumerations/expertise.model';
 import { getEntity, updateEntity, createEntity, reset } from './post.reducer';
@@ -20,6 +22,7 @@ export const PostUpdate = () => {
   const { id } = useParams<'id'>();
   const isNew = id === undefined;
 
+  const userAccounts = useAppSelector(state => state.userAccount.entities);
   const postEntity = useAppSelector(state => state.post.entity);
   const loading = useAppSelector(state => state.post.loading);
   const updating = useAppSelector(state => state.post.updating);
@@ -36,6 +39,8 @@ export const PostUpdate = () => {
     } else {
       dispatch(getEntity(id));
     }
+
+    dispatch(getUserAccounts({}));
   }, []);
 
   useEffect(() => {
@@ -50,6 +55,7 @@ export const PostUpdate = () => {
     const entity = {
       ...postEntity,
       ...values,
+      login: userAccounts.find(it => it.id.toString() === values.login.toString()),
     };
 
     if (isNew) {
@@ -68,6 +74,7 @@ export const PostUpdate = () => {
           expertise: 'PLUMBING',
           ...postEntity,
           date: convertDateTimeFromServer(postEntity.date),
+          login: postEntity?.login?.id,
         };
 
   return (
@@ -144,6 +151,16 @@ export const PostUpdate = () => {
                 isImage
                 accept="image/*"
               />
+              <ValidatedField id="post-login" name="login" data-cy="login" label={translate('secretWeaponApp.post.login')} type="select">
+                <option value="" key="0" />
+                {userAccounts
+                  ? userAccounts.map(otherEntity => (
+                      <option value={otherEntity.id} key={otherEntity.id}>
+                        {otherEntity.id}
+                      </option>
+                    ))
+                  : null}
+              </ValidatedField>
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/post" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

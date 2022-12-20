@@ -39,9 +39,9 @@ export const ExpertUserDetail = () => {
           </dt>
           <dd>{expertUserEntity.expertise}</dd>
           <dt>
-            <Translate contentKey="secretWeaponApp.expertUser.userAccount">User Account</Translate>
+            <Translate contentKey="secretWeaponApp.expertUser.login">Login</Translate>
           </dt>
-          <dd>{expertUserEntity.userAccount ? expertUserEntity.userAccount.id : ''}</dd>
+          <dd>{expertUserEntity.login ? expertUserEntity.login.id : ''}</dd>
         </dl>
         <Button tag={Link} to="/expert-user" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

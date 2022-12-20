@@ -29,8 +29,8 @@ public class ExpertUser implements Serializable {
     private Expertise expertise;
 
     @ManyToOne
-    @JsonIgnoreProperties(value = { "user", "expertUsers" }, allowSetters = true)
-    private UserAccount userAccount;
+    @JsonIgnoreProperties(value = { "user", "expertUsers", "posts" }, allowSetters = true)
+    private UserAccount login;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -60,16 +60,16 @@ public class ExpertUser implements Serializable {
         this.expertise = expertise;
     }
 
-    public UserAccount getUserAccount() {
-        return this.userAccount;
+    public UserAccount getLogin() {
+        return this.login;
     }
 
-    public void setUserAccount(UserAccount userAccount) {
-        this.userAccount = userAccount;
+    public void setLogin(UserAccount userAccount) {
+        this.login = userAccount;
     }
 
-    public ExpertUser userAccount(UserAccount userAccount) {
-        this.setUserAccount(userAccount);
+    public ExpertUser login(UserAccount userAccount) {
+        this.setLogin(userAccount);
         return this;
     }
 

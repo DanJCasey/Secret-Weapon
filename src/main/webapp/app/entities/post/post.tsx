@@ -66,6 +66,9 @@ export const Post = () => {
                 <th>
                   <Translate contentKey="secretWeaponApp.post.image">Image</Translate>
                 </th>
+                <th>
+                  <Translate contentKey="secretWeaponApp.post.login">Login</Translate>
+                </th>
                 <th />
               </tr>
             </thead>
@@ -98,6 +101,7 @@ export const Post = () => {
                       </div>
                     ) : null}
                   </td>
+                  <td>{post.login ? <Link to={`/user-account/${post.login.id}`}>{post.login.id}</Link> : ''}</td>
                   <td className="text-end">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`/post/${post.id}`} color="info" size="sm" data-cy="entityDetailsButton">

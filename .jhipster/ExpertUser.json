@@ -20,7 +20,7 @@
     {
       "otherEntityName": "userAccount",
       "otherEntityRelationshipName": "expertUser",
-      "relationshipName": "userAccount",
+      "relationshipName": "login",
       "relationshipType": "many-to-one"
     }
   ],

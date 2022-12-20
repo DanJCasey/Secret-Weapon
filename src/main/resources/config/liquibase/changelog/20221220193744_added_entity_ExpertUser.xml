@@ -17,7 +17,7 @@
             <column name="expertise" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="user_account_id" type="bigint">
+            <column name="login_id" type="bigint">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->

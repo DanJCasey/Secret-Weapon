@@ -22,7 +22,8 @@
       "postBody": "Post Body",
       "date": "Date",
       "expertise": "Expertise",
-      "image": "Image"
+      "image": "Image",
+      "login": "Login"
     }
   }
 }
